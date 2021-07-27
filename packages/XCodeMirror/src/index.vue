@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="x-codemirror-wrap">
     <div
       ref="merge"
       v-if="isMerge"
@@ -162,3 +162,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.x-codemirror-wrap{
+  width: 100%;
+}
+</style>
