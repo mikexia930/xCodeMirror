@@ -1,7 +1,7 @@
 {
   "name": "x-codemirror-vue",
   "description": "Vue component for CodeMirror",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "keywords": [
     "vue",
     "component",
