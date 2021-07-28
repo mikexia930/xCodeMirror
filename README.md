@@ -36,7 +36,7 @@ npm install x-codemirror-vue
 npm install diff-match-patch
 ```
 
-##使用 how to use
+## 使用 how to use
 ***
 **全局引用**
 
