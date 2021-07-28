@@ -7,7 +7,7 @@
 
 ### 版本 version
 ***
-* v1.0.7
+* v1.0.8
 
 ### 基于 based
 ***
@@ -36,7 +36,7 @@ npm install x-codemirror-vue
 npm install diff-match-patch
 ```
 
-##使用 how to use
+## 使用 how to use
 ***
 **全局引用**
 
@@ -46,7 +46,7 @@ npm install diff-match-patch
 import xCodeMirror from 'x-codemirror-vue';
 vue.use(xCodeMirror);
 ```
-**在组件中使用**
+**或者 在组件中引用**
 ```
 import { XCodeMirror } from 'x-codemirror-vue';
 ```
