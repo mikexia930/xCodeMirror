@@ -59,6 +59,11 @@ export default {
   },
   data () {
     return {
+      td: {
+        c,
+        b,
+        abc,
+      },
       codeMirrorIns: null,
       placeholder: 'insert here',
       code: '', // 内部真实的内容
