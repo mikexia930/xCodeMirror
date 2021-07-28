@@ -7,7 +7,7 @@
 
 ### 版本 version
 ***
-* v1.0.2
+* v1.0.7
 
 ### 基于 based
 ***
@@ -28,15 +28,27 @@
 ```
 **NPM**
 ```
+npm install codemirror
 npm install x-codemirror-vue
+```
+如果使用 merge 模式，需要
+```
+npm install diff-match-patch
 ```
 
 ##使用 how to use
 ***
-**在main.js中引入 import in main.js**
+**全局引用**
+
+在main.js中引入 import in main.js
+
 ```
 import xCodeMirror from 'x-codemirror-vue';
 vue.use(xCodeMirror);
+```
+**在组件中使用**
+```
+import { XCodeMirror } from 'x-codemirror-vue';
 ```
 
 **组件中使用**
