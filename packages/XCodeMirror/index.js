@@ -1,9 +1,19 @@
 import XCodeMirror from './src/index.vue';
 
-// 为组件提供 install 安装方法，供按需引入
-XCodeMirror.install = function (Vue) {
-  Vue.component(XCodeMirror.name, XCodeMirror);
-};
+const install = (Vue, config) => {
+  if (config) {
+    if (config.options) {
+      XCodeMirror.props.globalOptions.default = () => config.options
+    }
+    if (config.events) {
+      XCodeMirror.props.globalEvents.default = () => config.events
+    }
+  }
+  Vue.component(XCodeMirror.name, XCodeMirror)
+}
+
+const VueCodemirror = { XCodeMirror, install }
 
 // 导出组件
-export default XCodeMirror;
+export default VueCodemirror;
+export { XCodeMirror, install }

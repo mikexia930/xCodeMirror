@@ -69,7 +69,7 @@ export default {
       }
       // 支持双向绑定
       this.codemirrorIns.on('change', (coder) => {
-        this.curCode = coder.getValue()
+        this.curCode = coder.getValue();
         if (this.$emit) {
           this.emitTo('change', this.curCode);
         }
@@ -77,12 +77,12 @@ export default {
       this.refresh();
     },
     initCode() {
-      const codemirrorIns = CodeMirror.fromTextArea(this.$refs.textarea, this.options)
-      codemirrorIns.setValue(this.code || this.curCode)
+      const codemirrorIns = CodeMirror.fromTextArea(this.$refs.textarea, this.options);
+      codemirrorIns.setValue(this.code || this.curCode);
       return codemirrorIns;
     },
     initMerge() {
-      const codemirrorIns = CodeMirror.MergeView(this.$refs.merge, this.options)
+      const codemirrorIns = CodeMirror.MergeView(this.$refs.merge, this.options);
       return codemirrorIns.edit;
     },
     changeOption(opt, value) {
@@ -119,7 +119,7 @@ export default {
       filterEvent.forEach(event => {
         // 循环事件，并兼容 run-time 事件命名
         this.codemirrorIns.on(event, (...args) => {
-          this.emitTo(event, ...args);
+          this.emitTo(event, { ...args });
         })
       })
     },
@@ -127,7 +127,6 @@ export default {
       const curValue = this.codemirrorIns.getValue()
       if (newVal !== curValue) {
         this.codemirrorIns.setValue(newVal);
-        this.content = newVal;
         const scrollInfo = this.codemirrorIns.getScrollInfo();
         this.codemirrorIns.scrollTo(scrollInfo.left, scrollInfo.top);
       }
@@ -143,21 +142,21 @@ export default {
     },
     refresh() {
       this.$nextTick(() => {
-        this.codemirrorIns.refresh()
+        this.codemirrorIns.refresh();
       })
     },
     emitTo(type, data) {
       this.$emit(this.emit, {
         type,
         data,
-      })
+      });
     },
     beforeDestroy() {
-      this.destroy()
+      this.destroy();
     },
     destroy() {
-      const cmDom = this.codemirrorIns.doc.cm.getWrapperElement()
-      cmDom && cmDom.remove && cmDom.remove()
+      const cmDom = this.codemirrorIns?.doc?.cm?.getWrapperElement();
+      cmDom && cmDom.remove && cmDom.remove();
     },
   },
 }
