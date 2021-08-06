@@ -51,7 +51,6 @@ window.DIFF_DELETE = -1
 window.DIFF_INSERT = 1
 window.DIFF_EQUAL = 0
 
-
 export default {
   name: 'App',
   components: {
@@ -59,11 +58,6 @@ export default {
   },
   data () {
     return {
-      td: {
-        c,
-        b,
-        abc,
-      },
       codeMirrorIns: null,
       placeholder: 'insert here',
       code: '', // 内部真实的内容
