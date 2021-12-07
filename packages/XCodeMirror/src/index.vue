@@ -66,6 +66,7 @@ export default {
         this.codemirrorIns = this.initMerge();
       } else {
         this.codemirrorIns = this.initCode();
+        this.refresh();
       }
       // 支持双向绑定
       this.codemirrorIns.on('change', (coder) => {
@@ -74,15 +75,16 @@ export default {
           this.emitTo('change', this.curCode);
         }
       });
-      this.refresh();
     },
     initCode() {
-      const codemirrorIns = CodeMirror.fromTextArea(this.$refs.textarea, this.options);
+      const options = Object.assign({}, this.options);
+      const codemirrorIns = CodeMirror.fromTextArea(this.$refs.textarea, options);
       codemirrorIns.setValue(this.code || this.curCode);
       return codemirrorIns;
     },
     initMerge() {
-      const codemirrorIns = CodeMirror.MergeView(this.$refs.merge, this.options);
+      const options = Object.assign({}, this.options);
+      const codemirrorIns = CodeMirror.MergeView(this.$refs.merge, options);
       return codemirrorIns.edit;
     },
     changeOption(opt, value) {
